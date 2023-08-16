@@ -1,0 +1,2663 @@
+#include <iostream>
+#include <Windows.h>
+#include <cmath>
+#include <string.h>
+
+using namespace std;
+
+double Pi = 3.14;
+
+double Begin1(double a)
+{
+	double P = 4 * a;
+	return P;
+}
+double Begin2(double a)
+{
+	double S = pow(a, 2);
+	return S;
+
+}
+double Begin3(double a, double b)
+{
+	double P = 2 * (a + b);
+	double S = a * b;
+	cout << "Ответ: " << P << " " << S<<endl;
+	return 0;
+}
+double Begin4(double d)
+{
+	double L = Pi * d;
+	return L;
+}
+double Begin5(double a)
+{
+	double V = pow(a, 3);
+	double S = 6 * pow(a, 2);
+	cout << "Ответ: " << V << " " << S << endl;
+	return 0;
+}
+double Begin6(double a, double b, double c)
+{
+	double V = a * b * c;
+	double S = 2 * (a * b + b * c + a * c);
+	cout << "Ответ: " << V << " " << S << endl;
+	return 0;
+}
+double Begin7(double R)
+{
+	double L = 2 * Pi * R;
+	double S = Pi * pow(R, 2);
+	cout << "Ответ: " << L << " " << S << endl;
+	return 0;
+}
+double Begin8(double a, double b)
+{
+	double sred = (a + b) / 2;
+	cout << "Ответ: " << sred;
+	return 0;
+}
+double Begin9(double a, double b)
+{
+	double sredgeom = sqrt(a * b);
+	cout << "Ответ: " << sredgeom;
+	return 0;
+}
+double Begin10(double a, double b)
+{
+	double Sum = pow(a, 2) + pow(b, 2);
+	double Diff = pow(a, 2) - pow(b, 2);
+	double Composition = pow(a, 2) / pow(b, 2);
+	double Quotient = pow(a, 2) * pow(b, 2);
+	cout << "Ответ: " << Sum << " " << Diff << " " << Composition << " " << Quotient << endl;
+	return 0;
+}
+double Begin11(double a, double b)
+{
+	double Sum = fabs(a) + fabs(b);
+	double Diff = fabs(a) - fabs(b);
+	double Composition = fabs(a) / fabs(b);
+	double Quotient = fabs(a) * fabs(b);
+	cout << "Ответ: " << Sum << " " << Diff << " " << Composition << " " << Quotient << endl;
+	return 0;
+}
+double Begin12(double a, double b, double c)
+{
+	double P = a + b + c;
+	double G = sqrt(pow(a, 2) + pow(b, 2));
+	cout << "Ответ: " << P << " " << G << endl;
+	return 0;
+}
+double Begin13(double R2, double R1)
+{
+	double S1 = Pi * (R1 * R1);
+	double S2 = Pi * (R2 * R2);
+	double S3 = S1 - S2;
+	cout << "Ответ:" << S1 << "" << S2 << "" << S3 << endl;
+	return 0;
+}
+double Begin14(double R)
+{
+	double dlina = 2 * Pi * R;
+	double S = Pi * pow(R, 2);
+	cout << "Ответ" << "Длина- " << dlina << "Плошадь-" << S << endl;
+	return 0;
+}
+double Begin15(double D)
+{
+	double d = Pi * D;
+	double S = Pi * pow(D, 2) / 4;
+	cout << "Ответ" << "Длина- " << d << "Плошадь-" << S << endl;
+	return 0;
+}
+double Begin16(double x1, double x2)
+{
+	double rast = fabs(x2 - x1);
+	cout << "Ответ" << "Растояние- " << rast << endl;
+	return 0;
+}
+double Begin17(double x1, double x2, double x3)
+{
+	double AC = fabs(x3 - x1);
+	double BC = fabs(x3 - x2);
+	double Summ = AC + BC;
+	cout << "Ответ" << "AC- " << AC << "BC- " << BC << "Summ- " << Summ << endl;
+	return 0;
+}
+double Begin18(double x1, double x2, double x3)
+{
+	double AC = fabs(x3 - x1);
+	double BC = fabs(x3 - x2);
+	double Proiz = AC * BC;
+	cout << "Ответ" << "AC- " << AC << "BC- " << BC << "Proiz- " << Proiz << endl;
+	return 0;
+}
+double Begin19(double x1, double x2, double y1, double y2)
+{
+	double A = (x2 - x1);
+	double B = (y2 - y1);
+	double Perimetr = 2 * (A + B);
+	double S = A * B;
+	cout << "Ответ" << "A- " << A << "B- " << B << "Perimetr- " << Perimetr << "S- " << S << endl;
+	return 0;
+}
+double Begin20(double x1, double x2, double y1, double y2)
+{
+	double Rast = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+	cout << "Ответ: " << Rast << endl;
+	return 0;
+}
+double Begin21(double x1, double x2, double x3, double y1, double y2, double y3)
+{
+	double st1 = sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+	double st2 = sqrt(((x2 - x3) * (x2 - x3)) + ((y2 - y3) * (y2 - y3)));
+	double st3 = sqrt(((x3 - x1) * (x3 - x1)) + ((y3 - y1) * (y3 - y1)));
+	double P = st1 + st2 + st3;
+	double p = P / 2;
+	double S = sqrt(p * (p - st1) * (p - st2) * (p - st3));
+	cout << "\nP= " << P << "\nS= " << S << endl;
+	return 0;
+}
+void Begin22(double* a, double* b, double* c)
+{
+	*c = *a;
+	*a = *b;
+	*b = *c;
+}
+void Begin23(double* a, double* b, double* c)
+{
+	*a = *b;
+	*b = *c;
+	*c = *a;
+
+}
+void Begin24(double* a, double* b, double* c)
+{
+	*a = *c;
+	*c = *b;
+	*b = *a;
+
+}
+double Begin25(double x)
+{
+	double Y = 3 * pow(x, 6) - 6 * pow(x, 2);
+	cout << "\nY= " << Y << endl;
+	return 0;
+
+}
+double Begin26(double x)
+{
+	double Y = 4 * pow(x - 3, 6) - 7 * pow(x - 3, 3) + 2;
+	cout << "\nY= " << Y << endl;
+	return 0;
+}
+double Begin27(double a)
+{
+	double a2 = a * a;
+	double a4 = a2 * a2;
+	double a8 = a4 * a4;
+	cout << "\na^2= " << a2 << "\na^4= " << a4 << "\na^8= " << a8;
+	return 0;
+}
+double Begin28(double a)
+{
+
+	double b = a * a;
+
+	double c = a * b;
+
+	double B = c * b;
+
+	double C = b * B;
+	double AA = B * C;
+	cout << "a^2 " << b << "a^3 " << c << "a^5" << B << "a^10" << C << "a^15" << AA;
+	return 0;
+}
+double Begin29(double a)
+{
+	double gradmer = a * Pi / 180;
+	cout << "градусная мера угла :" << gradmer << endl;
+	return 0;
+}
+double Begin30(double a)
+{
+	double radian = a * 180 / Pi;
+	cout << "градусная мера угла :" << radian << endl;
+	return 0;
+}
+double Begin31(double TF)
+{
+	double TC = (TF - 32) * 5 / 9;
+	cout << "Эта температура в градусах Цельсия: " << TC << endl;
+	return 0;
+}
+double Begin32(double TC)
+{
+	double TF = TC * 9 / 5 + 32;
+	cout << "Эта температура в градусах Фаренгейт: " << TF << endl;
+	return 0;
+}
+double Begin33(double a, double x, double y)
+{
+	double O = a / x;
+	double U = O * y;
+	cout << "1 кг конфет стоит " << O << endl;
+	cout << y << " кг конфет стоит " << U << endl;
+	return 0;
+}
+double Begin34(double a, double x, double y, double c)
+{
+	double sweetconf = x / a;
+	cout << "1 кг конфет стоит " << sweetconf << endl;
+	double sweetirisk = y / c;
+	cout << "1 кг конфет стоит " << sweetirisk << endl;
+	double ratio = sweetconf / sweetirisk;
+	cout << "Один килограмм конфет дороже ирисок в " << ratio << "раз" << endl;
+	return 0;
+}
+double Begin35(double V, double U, double T1, double T2)
+{
+	double S = T2 * (V - U) + T1 * V;
+	cout << "Путь пройденный лодкой равен" << S << endl;
+	return 0;
+}
+double Begin36(double V1, double V2, double T, double S)
+{
+	double SD = (V1 + V2) * T + S;
+	cout << "Через" << T << "ч.расстояние" << SD << "км" << endl;
+	return 0;
+}
+double Begin37(double V1, double V2, double S, double T)
+{
+	double obchai = T * (V1 + V2);
+	double cherez = fabs(S - obchai);
+	cout << "Рассстояние между автомобилями через " << T << "ч = " << cherez;
+	return 0;
+}
+double Begin38(double b, double a)
+{
+	double x = -b / a;
+	cout << "x =" << x << endl;
+	return 0;
+}
+double Begin39(double b, double a, double c)
+{
+	double D = sqrt(b) - 4 * a * c;
+	double x1 = (-b + sqrt(D)) / (2 * a);
+	double x2 = (-b - sqrt(D)) / (2 * a);
+	cout << "x1 =" << x1 << "x2 =" << x2 << endl;
+	return 0;
+}
+double Begin40(double A1, double A2, double B1, double B2, double C1, double C2)
+{
+	double D = A1 * B2 - A2 * B1;
+	double x = (C1 * B2 - C2 * B1) / D;
+	double y = (A1 * C2 - A2 * C1) / D;
+	cout << "x1 =" << x << "y =" << y << endl;
+	return 0;
+}
+
+int integer1(int a)
+{
+	return(a / 100);
+}
+int integer2(int a)
+{
+	return(a / 1000);
+}
+int integer3(int a)
+{
+	return(a / 1024);
+}
+int integer4(int a, int b)
+{
+	return(a / b);
+}
+int integer5(int a, int b)
+{
+	return(a % b);
+}
+void integer6(int a)
+{
+	int b, c;
+	b = a / 10;
+	c = a % 10;
+	cout << b << " " << c;
+}
+void integer7(int a)
+{
+	int sum, proizv;
+	sum = (a / 10) + (a % 10);
+	proizv = (a / 10) * (a % 10);
+	cout << sum << " " << proizv;
+}
+int integer8(int a)
+{
+	return((a / 10) + (a % 10) * 10);
+}
+int integer9(int a)
+{
+	return(a / 100);
+}
+void integer10(int a)
+{
+	int b, c;
+	b = a % 10;
+	c = (a / 10) % 10;
+	cout << b << " " << c;
+}
+void integer11(int a)
+{
+	int sum, proizv;
+	sum = (a / 100) + ((a % 100) / 10) + (a % 10);
+	proizv = (a / 100) * ((a % 100) / 10) * (a % 10);
+	cout << sum << " " << proizv;
+}
+int integer12(int a)
+{
+	int b, c, d, f;
+	b = a / 100;
+	c = (a % 100) / 10;
+	d = a % 10;
+	f = d * 100 + c * 10 + b;
+	return(f);
+}
+int integer13(int a)
+{
+	int b, c, d, f;
+	b = a / 100;
+	c = (a % 100) / 10;
+	d = a % 10;
+	f = c * 100 + d * 10 + b;
+	return(f);
+}
+int integer14(int a)
+{
+	int b, c, d, f;
+	b = a / 100;
+	c = (a % 100) / 10;
+	d = a % 10;
+	f = d * 100 + b * 10 + c;
+	return(f);
+}
+int integer15(int a)
+{
+	int b, c, d, f;
+	b = a / 100;
+	c = (a % 100) / 10;
+	d = a % 10;
+	f = c * 100 + d * 10 + b;
+	return(f);
+}
+int integer16(int a)
+{
+	int b, c, d, f;
+	b = a / 100;
+	c = (a % 100) / 10;
+	d = a % 10;
+	f = d * 100 + b * 10 + c;
+	return(f);
+}
+int integer17(int a)
+{
+	return((a / 1000) / 100);
+}
+int integer18(int a)
+{
+	return((a / 1000) / 10);
+}
+int integer19(int a)
+{
+	return(a / 60);
+}
+int integer20(int a)
+{
+	return(a / 3600);
+}
+int integer21(int a)
+{
+	return(a / 60);
+}
+int integer22(int a)
+{
+	return(a % 3600);
+}
+int integer23(int a)
+{
+	return((a % 3600) / 60);
+}
+int integer24(int a)
+{
+	return(a / 7);
+}
+int integer25(int a)
+{
+	return((a + 3) / 7);
+}
+int integer26(int a)
+{
+	return((a / 7) + 1);
+}
+int integer27(int a)
+{
+	return(((a + 4) / 7) + 1);
+}
+int integer28(int a, int b)
+{
+	return((a + b - 2) / (7 + 1));
+}
+void integer29(int A, int B, int C)
+{
+	int k = ((A * B) / pow(C, 2));
+	cout << "Количество квадратов: " << k << endl;
+	cout << "Оставшаяся часть: " << (A * B) - (k * pow(C, 2));
+}
+
+int integer30(int a)
+{
+	return((a / 100) - 1);
+}
+
+bool boolean1(int a)
+{
+	return (a > 0);
+}
+
+bool boolean2(int a)
+{
+	return (a % 2 != 0);
+}
+
+bool boolean3(int a)
+{
+	return (a % 2 == 0);
+}
+
+bool boolean4(int a, int b)
+{
+	return (a > 2 && b <= 3);
+}
+
+bool boolean5(int a, int b)
+{
+	return (a >= 0 || b < -2);
+}
+
+bool boolean6(int a, int b, int c)
+{
+	return (a < b&& b < c);
+}
+
+bool boolean7(int a, int b, int c)
+{
+	return((b <= a && b >= c) || (b >= a && b <= c));
+}
+
+bool boolean8(int a, int b)
+{
+	return(a % 2 != 0 && b % 2 != 0);
+}
+
+bool boolean9(int a, int b)
+{
+	return(a % 2 != 0 || b % 2 != 0);
+}
+
+bool boolean10(int a, int b)
+{
+	return((a % 2 != 0 && b % 2 == 0) || (a % 2 == 0 && b % 2 != 0));
+}
+
+bool boolean11(int a, int b)
+{
+	return (a % 2 == 0 && b % 2 == 0);
+}
+
+bool boolean12(int a, int b, int c)
+{
+	return (a > 0 && b > 0 && c > 0);
+}
+
+bool boolean13(int a, int b, int c)
+{
+	return (a > 0 || b > 0 || c > 0);
+}
+
+bool boolean14(int a, int b, int c)
+{
+	return ((a > 0 && b < 0 && c < 0) || (a < 0 && b > 0 && c < 0) || (a < 0 && b < 0 && c > 0));
+}
+
+bool boolean15(int a, int b, int c)
+{
+	return ((a > 0 && b > 0 && c < 0) || (a > 0 && b < 0 && c > 0) || (a < 0 && b > 0 && c > 0));
+}
+
+bool boolean16(int a)
+{
+	return (a > 9 && a < 100 && a % 2 == 0);
+}
+
+bool boolean17(int b)
+{
+	return (b > 99 && b < 1000 && b % 2 != 0);
+}
+
+bool boolean18(int a, int b, int c)
+{
+	return(a == b || a == c || b == c);
+}
+
+bool boolean19(int a, int b, int c)
+{
+	return(-a == b || -a == c || -b == c || -b == a || -c == a || -c == b);
+}
+
+bool boolean20(int a)
+{
+	int b = 0, c = 0, d = 0;
+	b = a / 100;
+	c = a % 100 / 10;
+	d = a % 10;
+	return (b != c && c != d && b != d);
+}
+
+bool boolean21(int b)
+{
+	int a = 0, c = 0, d = 0;
+	a = b / 100;
+	c = b % 100 / 10;
+	d = b % 10;
+	return (a < c&& c < d);
+}
+
+bool boolean22(int c)
+{
+	int a = 0, b = 0, d = 0;
+	a = c / 100;
+	b = c % 100 / 10;
+	d = c % 10;
+	return ((a < b&& b < d) || (a > b && b > d));
+}
+
+bool boolean23(int a)
+{
+	int b, c, d, e;
+	b = a % 10;
+	c = a / 1000;
+	d = a % 100 / 10;
+	e = a % 1000 / 100;
+	return(b == c && d == e);
+}
+
+bool boolean24(int a, int b, int c)
+{
+	double d;
+	d = pow(b, 2) - (4 * a * c);
+	return(d >= 0);
+}
+
+bool boolean25(int x, int y)
+{
+	return(y > 0 && x < 0);
+}
+
+bool boolean26(int x, int y)
+{
+	return(x > 0 && y < 0);
+}
+
+bool boolean27(int x, int y)
+{
+	return ((y > 0 && x < 0) || (y < 0 && x < 0));
+}
+
+bool boolean28(int x, int y)
+{
+	return((x > 0 && y > 0) || (x < 0 && y < 0));
+}
+
+bool boolean29(int x, int y, int x1, int y1, int x2, int y2)
+{
+	return(x1 < x&& x < x2&& y2 < y&& y < y1);
+}
+
+bool boolean30(int a, int b, int c)
+{
+	return(a == b && a == c && b == c);
+}
+
+bool boolean31(int a, int b, int c)
+{
+	return(a == b || a == c || c == b);
+}
+
+bool boolean32(int a, int b, int c)
+{
+	int a2, b2, c2;
+	a2 = pow(a, 2);
+	b2 = pow(b, 2);
+	c2 = pow(c, 2);
+	return ((a2 == b2 + c2) || (b2 == a2 + c2) || c2 == a2 + b2);
+}
+
+bool boolean33(int a, int b, int c)
+{
+	return((a + b) > c && (a + c) > b && (b + c) > a);
+}
+
+bool boolean34(int x, int y)
+{
+	return((x + y) % 2 != 0);
+}
+
+bool boolean35(int x1, int y1, int x2, int y2)
+{
+	return((x1 + y1) % 2 == (x2 + y2) % 2);
+}
+
+bool boolean36(int x1, int y1, int x2, int y2)
+{
+	return (x1 == x2 || y1 == y2);
+}
+
+bool boolean37(int x1, int y1, int x2, int y2)
+{
+	return(abs(x1 - x2) <= 1 && abs(y1 - y2) <= 1);
+}
+
+bool boolean38(int x1, int y1, int x2, int y2)
+{
+	return((x1 == x2) || (y1 == y2));
+}
+
+bool boolean39(int x1, int y1, int x2, int y2)
+{
+	return(abs(x1 - x2) == abs(y1 - y2) || (x1 == x2) || (y1 == y2));
+}
+
+bool boolean40(int x1, int y1, int x2, int y2)
+{
+	return (abs(x1 - x2) == 1 && abs(y1 - y2) == 2 || abs(x1 - x2) == 2 && abs(y1 - y2) == 1);
+}
+
+int	if1(int a)
+{
+	if (a > 0)
+	{
+		a += 1;
+	}
+	return a;
+}
+
+int if2(int a)
+{
+	if (a > 0)
+	{
+		return a += 1;
+	}
+	else
+	{
+		return a += 2;
+	}
+}
+
+int if3(int a)
+{
+	if (a > 0)
+	{
+		return a += 1;
+	}
+	if (a == 0)
+	{
+		return a = 10;
+	}
+	if (a < 0)
+	{
+		return a -= 2;
+	}
+}
+
+int if4(int a, int b, int c)
+{
+	int kol = 0;
+	if (a > 0)
+	{
+		kol++;
+	}
+
+	if (b > 0)
+	{
+		kol++;
+	}
+
+	if (c > 0)
+	{
+		kol++;
+	}
+	return kol;
+}
+
+void if5(int a, int b, int c)
+{
+	int kol = 0, notkol = 0;
+	if (a > 0)
+	{
+		kol++;
+	}
+	else
+	{
+		notkol++;
+	}
+	if (b > 0)
+	{
+		kol++;
+	}
+	else
+	{
+		notkol++;
+	}
+	if (c > 0)
+	{
+		kol++;
+	}
+	else
+	{
+		notkol++;
+	}
+	cout << "chet: " << kol << " nechet: " << notkol << endl;
+}
+
+int if6(int a, int b)
+{
+	if (a > b)
+	{
+		return a;
+	}
+	if (a < b)
+	{
+		return b;
+	}
+	if (a == b)
+	{
+		cout << "они равные";
+		return 0;
+	}
+}
+
+int if7(int a, int b)
+{
+	if (a > b)
+	{
+		return 1;
+	}
+	else
+	{
+		return 2;
+	}
+}
+
+void if8(int a, int b)
+{
+	if (a > b)
+	{
+		cout << a << b;
+	}
+	else
+	{
+		cout << b << a;
+	}
+}
+
+void if9(double a, double b)
+{
+	if (a > b)
+	{
+		int c;
+		c = a;
+		a = b;
+		b = c;
+	}
+	cout << a << b;
+}
+
+void if10(int a, int b)
+{
+	if (a == b)
+	{
+		a = 0;
+		b = 0;
+	}
+	else
+	{
+		int c = a + b;
+		a = c;
+		b = c;
+	}
+	cout << a << b;
+}
+
+void if11(int a, int b)
+{
+	int max;
+	if (a > b)
+	{
+		max = a;
+	}
+	else
+	{
+		max = b;
+	}
+	if (a != b)
+	{
+		a = max;
+		b = max;
+		cout << a << b;
+	}
+	if (a == b)
+	{
+		a = 0;
+		b = 0;
+		cout << a << b;
+	}
+}
+
+void if12(int a, int b, int c)
+{
+	if (a > b)
+	{
+		if (b > c)
+		{
+			cout << c;
+		}
+		else
+		{
+			cout << b;
+		}
+	}
+	else
+	{
+		if (a < b && a < c)
+		{
+			cout << a;
+
+		}
+	}
+}
+
+void if13(int a, int b, int c)
+{
+	if (a < b)
+	{
+		if (b < c)
+		{
+			cout << b;
+		}
+		else
+		{
+			cout << c;
+		}
+	}
+	else
+	{
+		if (a < c)
+		{
+			cout << a;
+		}
+
+		else
+		{
+			cout << c;
+		}
+
+	}
+}
+
+void if14(int a, int b, int c)
+{
+	if (a < b && a < c)
+	{
+		cout << a;
+	}
+	else if (b < c)
+	{
+		cout << b;
+	}
+	else
+	{
+		cout << c;
+	}
+	if (a > b && a > c)
+	{
+		cout << a;
+	}
+	else if (b > c)
+	{
+		cout << b;
+	}
+	else
+	{
+		cout << c;
+	}
+}
+
+int if15(int a, int b, int c)
+{
+	int max1, max2;
+
+	if (a > b)
+	{
+		max1 = a;
+		if (b > c)
+		{
+			max2 = b;
+		}
+		else
+		{
+			max2 = c;
+
+		}
+	}
+	else
+	{
+		max1 = b;
+		if (a > c)
+		{
+			max2 = a;
+		}
+		else
+		{
+			max2 = c;
+		}
+	}
+
+	int sum = max1 + max2;
+	return sum;
+}
+
+void if16(double a, double b, double c)
+{
+	if (a < b && b < c)
+	{
+		a *= 2;
+		b *= 2;
+		c *= 2;
+	}
+	else
+	{
+		a = -a;
+		b = -b;
+		c = -c;
+	}
+	cout << a << ' ' << b << ' ' << c;
+}
+
+void if17(double a, double b, double c)
+{
+	if ((a < b) & (b < c) || (a > b) & (b > c))
+	{
+		a = a * 2;
+		b = b * 2;
+		c = c * 2;
+		cout << a << ' ' << b << ' ' << c;
+
+	}
+	else
+	{
+		a = a * (-1);
+		b = b * (-1);
+		c = c * (-1);
+		cout << a << ' ' << b << ' ' << c;
+	}
+}
+
+void if18(double a, double b, double c)
+{
+	if (a == b & b != c)
+	{
+		cout << 3;
+	}
+	if (a == c & c != b)
+	{
+		cout << 2;
+	}
+	if (b == c & a != b)
+	{
+		cout << 1;
+	}
+}
+
+void if19(int a, int b, int c, int d)
+{
+	if (a == b == c & c != d)
+	{
+		cout << 4;
+	}
+	if (a == b == d & c != d)
+	{
+		cout << 3;
+	}
+	if (a == b == c & b != d)
+	{
+		cout << 2;
+	}
+	if (d == b == c & a != d)
+	{
+		cout << 1;
+	}
+}
+
+void if20(int a, int b, int c)
+{
+	if (abs(a - b) < abs(a - c))
+	{
+		cout << "ближе:" << b << endl;
+		if ((a - b) > 0)
+			cout << a - b;
+		else if ((a - b) < 0)
+			cout << (a - b) * -1;
+	}
+	else
+	{
+		cout << "ближе:" << c << endl;
+		if ((a - c) > 0)
+			cout << a - c;
+		else if ((a - c) < 0)
+			cout << (a - c) * -1;
+	}
+}
+
+void if21(int a, int b)
+{
+	if (a == 0 && b == 0)
+	{
+		cout << "0" << endl;
+	}
+	else if (a == 0 && b != 0)
+	{
+		cout << "1" << endl;
+	}
+	else if (a != 0 && b == 0)
+	{
+		cout << "2" << endl;
+	}
+	else
+	{
+		cout << "3" << endl;
+	}
+}
+
+void if22(int a, int b)
+{
+	if (a > 0 && b > 0)
+	{
+		cout << "Первая ";
+	}
+	else if (a < 0 && b>0)
+	{
+		cout << "Вторая ";
+	}
+	else if (a < 0 && b < 0)
+	{
+		cout << "Третья ";
+	}
+	else
+	{
+		cout << "Четвертая ";
+	}
+}
+
+void if23(int a, int b, int c, int b2, int c3, int a1)
+{
+	if (b == c)
+	{
+		cout << "x4:" << a << endl;
+	}
+	else
+	{
+		if (c == a)
+		{
+			cout << "x4:" << b << endl;
+		}
+		else
+		{
+			cout << "x4:" << c << endl;
+		}
+	}
+	if (b2 == c3)
+	{
+		cout << "y4:" << a1;
+	}
+	else
+	{
+		if (c3 == a1)
+		{
+			cout << "d4:" << b2;
+		}
+	}
+}
+
+int if24(int x)
+{
+	int f;
+	if (x > 0)
+	{
+		f = 2 * sin(x);
+	}
+	else
+	{
+		f = 6 - x;
+	}
+	return f;
+}
+
+int if25(int x)
+{
+	if (x < -2 | x>2)
+	{
+		x *= 2;
+	}
+	else
+	{
+		x *= -3;
+	}
+
+	return x;
+}
+
+int if26(int x)
+{
+	if (x <= 0)
+	{
+		x = -x;
+	}
+	if (0 < x < 2)
+	{
+		x = pow(x, 2);
+	}
+	if (x >= 2)
+	{
+		x = 4;
+	}
+	return x;
+}
+
+int if27(int x)
+{
+	if (x < 0)
+	{
+		return 0;
+	}
+	else
+	{
+		if ((x % 2) == 0)
+		{
+			return 1;
+		}
+		else
+		{
+			return -1;
+		}
+	}
+}
+
+int if28(int a)
+{
+	int days = (a % 400 == 0 || a % 4 == 0 && a % 100 != 0) ? 366 : 365;
+
+	return days;
+}
+
+void if29(int a)
+{
+	if (a == 0)
+	{
+		cout << "нулевое ";
+	}
+	else
+	{
+		if (a > 0)
+		{
+			cout << "положительное ";
+		}
+		else
+		{
+			cout << "отрицательное ";
+		}
+	}
+	cout << "число";
+}
+
+void if30(int a)
+{
+
+	if (a % 2 == 0)
+	{
+		cout << "четное ";
+	}
+	else
+	{
+		cout << "нечетное ";
+	}
+	if (a / 100 > 0 && a / 100 < 10)
+	{
+		cout << "трехзначное ";
+	}
+	else
+	{
+		if (a / 10 > 0 && a / 10 < 10)
+		{
+			cout << "двухзначное ";
+		}
+		else
+		{
+			if (a / 10 == 0)
+			{
+				cout << "однозначное ";
+			}
+		}
+	}
+	cout << "число";
+}
+
+void case1(int x)
+{
+	if (x < 1 || x>7)
+	{
+		cout << "Вы ввели неправильное число. Введите от 1 до 7 !" << endl;
+		system("pause");
+	}
+	switch (x)
+	{
+	case 1:
+	{
+		cout << "Понедельник.";
+		break;
+	}
+	case 2:
+	{
+		cout << "Вторник.";
+		break;
+	}
+	case 3:
+	{
+		cout << "Среда.";
+		break;
+	}
+	case 4:
+	{
+		cout << "Четверг.";
+		break;
+	}
+	case 5:
+	{
+		cout << "Пятница.";
+		break;
+	}
+	case 6:
+	{
+		cout << "Суббота.";
+		break;
+	}
+	case 7:
+	{
+		cout << "Воскресенье.";
+		break;
+	}
+	}
+}
+void case2(int K)
+{
+	if (K < 1 || K>5)
+	{
+		cout << "Ошибка." << endl;
+		system("pause");
+	}
+	switch (K)
+	{
+	case 1:
+	{
+		cout << "Плохо." << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "Неудовлетворительно." << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << "Удовлетворительно." << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << "Хорошо." << endl;
+		break;
+	}
+	case 5:
+	{
+		cout << "Отлично." << endl;
+		break;
+	}
+	}
+}
+void case3(int x2)
+{
+	if (x2 < 1 || x2 > 12)
+	{
+		cout << "Ошибка." << endl;
+		system("pause");
+	}
+	switch (x2)
+	{
+	case 1:
+	case 2:
+	case 12:
+	{
+		cout << "Зима." << endl;
+		break;
+	}
+	case 3:
+	case 4:
+	case 5:
+	{
+		cout << "Весна." << endl;
+		break;
+	}
+	case 6:
+	case 7:
+	case 8:
+	{
+		cout << "Лето." << endl;
+		break;
+	}
+	case 9:
+	case 10:
+	case 11:
+	{
+		cout << "Осень." << endl;
+		break;
+	}
+	}
+}
+void case4(int x3)
+{
+	if (x3 < 1 || x3 > 12)
+	{
+		cout << "Ошибка." << endl;
+		system("pause");
+	}
+	switch (x3)
+	{
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+	{
+		cout << "31 день." << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "28 дней." << endl;
+		break;
+	}
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+	{
+		cout << "30 дней." << endl;
+		break;
+	}
+	}
+}
+void case5(int N, double A, double B)
+{
+	if (N < 1 || N>4)
+	{
+		cout << "Ошибка." << endl;
+		system("pause");
+	}
+	if (B == 0)
+	{
+		cout << "B не должно равнятся нулю." << endl;
+		system("pause");
+	}
+	switch (N)
+	{
+	case 1:
+	{
+		cout << "Сложение: " << A + B << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "Вычитание: " << A - B << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << "Умножение: " << A * B << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << "Деление: " << A / B << endl;
+		break;
+	}
+	}
+}
+void case6(int x6, double y)
+{
+	if (x6 < 1 || x6>5)
+	{
+		cout << "Ошибка." << endl;
+		system("pause");
+	}
+	switch (x6)
+	{
+	case 1:
+	{
+		cout << y << " дециметров = " << y / 10 << " метров." << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << y << " километров = " << y * 1000 << " метров." << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << y << " метров = " << y << " метров." << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << y << " миллиметров = " << y / 1000 << " метров." << endl;
+		break;
+	}
+	case 5:
+	{
+		cout << y << " сантиметров = " << y / 100 << " метров." << endl;
+		break;
+	}
+	}
+}
+void case7(int x7, double y7)
+{
+	if (x7 < 1 || x7>5)
+	{
+		cout << "Ошибка." << endl;
+		system("pause");
+	}
+	switch (x7)
+	{
+	case 1:
+	{
+		cout << y7 << " килограмм = " << y7 << " килограмм." << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << y7 << " милиграмм = " << y7 / 1000000 << " килограмм." << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << y7 << " грамм = " << y7 / 1000 << " килограмм." << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << y7 << " тонн = " << y7 * 1000 << " килограмм." << endl;
+		break;
+	}
+	case 5:
+	{
+		cout << y7 << " центнеров = " << y7 * 100 << " метров." << endl;
+		break;
+	}
+	}
+}
+void case8(int D8, int M8)
+{
+	if ((D8 > 31 || D8 < 1) || (M8 > 12 || M8 < 1))
+	{
+		cout << "Ошибка." << endl;
+		system("pause");
+	}
+	D8 -= 1;
+	if (D8 == 0)
+	{
+		M8 -= 1;
+		if (M8 == 0)
+		{
+			M8 = 12;
+		}
+		switch (M8)
+		{
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+		{
+			D8 = 31;
+			cout << "Предыдущая дата: " << D8 << "." << M8 << endl;
+			system("pause");
+		}
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+		{
+			D8 = 30;
+			cout << "Предыдущая дата: " << D8 << "." << M8 << endl;
+			system("pause");
+		}
+		case 2:
+		{
+			D8 = 28;
+			cout << "Предыдущая дата: " << D8 << "." << M8 << endl;
+			system("pause");
+		}
+		}
+	}
+	cout << "Предыдущая дата: " << D8 << "." << M8 << endl;
+}
+void case9(int D9, int M9)
+{
+	if ((D9 > 31 || D9 < 1) || (M9 > 12 || M9 < 1) || (D9 > 28 & M9 == 2))
+	{
+		cout << "Ошибка." << endl;
+		system("pause");
+	}
+	switch (D9)
+	{
+	case 28:
+	{
+		if (M9 == 2)
+		{
+			D9 = 1;
+			M9 = 3;
+			cout << "Следущая дата: " << D9 << "." << M9 << endl;
+		}
+		else
+		{
+			cout << "Следующая дата: " << D9 + 1 << "." << M9 << endl;
+		}
+		break;
+	}
+	case 30:
+	{
+		if ((M9 == 4) || (M9 == 6) || (M9 == 9) || (M9 == 11))
+		{
+			D9 = 1;
+			cout << "Следущая дата: " << D9 << "." << M9 + 1 << endl;
+		}
+		else
+		{
+			cout << "Следующая дата: " << D9 + 1 << "." << M9 << endl;
+		}
+		break;
+	}
+	case 31:
+	{
+		if (M9 != 12)
+		{
+			D9 = 1;
+			cout << "Следущая дата: " << D9 << "." << M9 + 1 << endl;
+		}
+		else
+		{
+			D9 = 1;
+			M9 = 1;
+			cout << "Следующая дата: " << D9 << "." << M9 << endl;
+		}
+		break;
+	}
+	default:
+		cout << "Следующая дата: " << D9 + 1 << "." << M9 << endl;
+		break;
+	}
+}
+void case10(string x10, int y10)
+{
+	switch (y10)
+	{
+	case -1:
+	{
+		if (x10 == "С")
+		{
+			cout << "Восток." << endl;
+		}
+		if (x10 == "З")
+		{
+			cout << "Север." << endl;
+		}
+		if (x10 == "Ю")
+		{
+			cout << "Запад." << endl;
+		}
+		if (x10 == "В")
+		{
+			cout << "Юг." << endl;
+		}
+		break;
+	}
+	case 0:
+	{
+		if (x10 == "С")
+		{
+			cout << "Север." << endl;
+		}
+		if (x10 == "З")
+		{
+			cout << "Запад." << endl;
+		}
+		if (x10 == "Ю")
+		{
+			cout << "Юг." << endl;
+		}
+		if (x10 == "В")
+		{
+			cout << "Восток." << endl;
+		}
+		break;
+	}
+	case 1:
+	{
+		if (x10 == "С")
+		{
+			cout << "Запад." << endl;
+		}
+		if (x10 == "З")
+		{
+			cout << "Юг." << endl;
+		}
+		if (x10 == "Ю")
+		{
+			cout << "Восток." << endl;
+		}
+		if (x10 == "В")
+		{
+			cout << "Север." << endl;
+		}
+		break;
+	}
+	}
+}
+void case11(char x11, int y11, int z11)
+{
+	int N;
+	switch (x11)
+	{
+	case 'С':
+	{
+		N = 0;
+		break;
+	}
+	case 'Ю':
+	{
+		N = 2;
+		break;
+	}
+	case 'В':
+	{
+		N = -1;
+		break;
+	}
+	case 'З':
+	{
+		N = 1;
+		break;
+	}
+	}
+	switch (N + y11 + z11)
+	{
+	case 0:
+	{
+		cout << "Север." << endl;
+		break;
+	}
+	case 1:
+	{
+		cout << "Запад." << endl;
+		break;
+	}
+	case -1:
+	{
+		cout << "Восток." << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "Юг." << endl;
+		break;
+	}
+	case -2:
+	{
+		cout << "Юг." << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << "Восток." << endl;
+		break;
+	}
+	case -3:
+	{
+		cout << "Запад." << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << "Север." << endl;
+		break;
+	}
+	case 5:
+	{
+		cout << "Запад." << endl;
+		break;
+	}
+	case 6:
+	{
+		cout << "Юг." << endl;
+		break;
+	}
+	}
+}
+void case12(int x12, double y12)
+{
+	double p = 3.14;
+	switch (x12)
+	{
+	case 1:
+	{
+		cout << "Радиус: " << y12 << "\n" << "Диаметр: " << y12 * 2 << "\n" << "Длина: " << y12 * 2 * p << "\n" << "Площадь круга: " << pow(y12, 2) * p << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "Радиус: " << y12 / 2 << "\n" << "Диаметр: " << y12 << "\n" << "Длина: " << (y12 / 2) * 2 * p << "\n" << "Площадь круга: " << pow((y12 / 2), 2) * p << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << "Радиус: " << y12 / (2 * p) << "\n" << "Диаметр: " << (y12 / (2 * p)) * 2 << "\n" << "Длина: " << y12 << "\n" << "Площадь круга: " << pow((y12 / (2 * p)), 2) * p << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << "Радиус: " << sqrt(y12 / p) << "\n" << "Диаметр: " << (sqrt(y12 / p)) * 2 << "\n" << "Длина: " << 2 * p * (sqrt(y12 / p)) << "\n" << "Площадь круга: " << y12 << endl;
+		break;
+	}
+	}
+}
+void case13(int x13, double y13)
+{
+	switch (x13)
+	{
+	case 1:
+	{
+		cout << "Катет: " << y13 << "\n" << "Гипотенуза: " << y13 * sqrt(2) << "\n" << "Высота: " << (y13 * sqrt(2)) / 2 << "\n" << "Площадь равнобедренного треугольника: " << (y13 * sqrt(2)) * (((y13 * sqrt(2))) / 2) << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "Катет: " << y13 / sqrt(2) << "\n" << "Гипотенуза: " << y13 << "\n" << "Высота: " << y13 / 2 << "\n" << "Площадь равнобедренного треугольника: " << y13 * ((y13 / 2) / 2) << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << "Катет: " << (y13 * 2) / sqrt(2) << "\n" << "Гипотенуза: " << y13 * 2 << "\n" << "Высота: " << y13 << "\n" << "Площадь равнобедренного треугольника: " << (y13 * 2) * (y13 / 2) << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << "Катет: " << (sqrt(y13) * 2) / sqrt(2) << "\n" << "Гипотенуза: " << sqrt(y13) * 2 << "\n" << "Высота: " << sqrt(y13) << "\n" << "Площадь равнобедренного треугольника: " << y13 << endl;
+		break;
+	}
+	}
+}
+void case14(int x14, double y14)
+{
+	switch (x14)
+	{
+	case 1:
+	{
+		cout << "Сторона: " << y14 << "\n" << "Радиус вписанной окружности: " << (y14 * sqrt(3)) / 6 << "\n" << "Радиус описанной окружности: " << ((y14 * sqrt(3)) / 6) * 2 << "\n" << "Площадь равностороннего треугольника: " << (pow(y14, 2) * sqrt(3)) / 4 << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "Сторона: " << (y14 * 6) / sqrt(3) << "\n" << "Радиус вписанной окружности: " << y14 << "\n" << "Радиус описанной окружности: " << y14 * 2 << "\n" << "Площадь равностороннего треугольника: " << (pow((y14 * 6) / sqrt(3), 2) * sqrt(3)) / 4 << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << "Сторона: " << ((y14 / 2) * 6) / sqrt(3) << "\n" << "Радиус вписанной окружности: " << y14 / 2 << "\n" << "Радиус описанной окружности: " << y14 << "\n" << "Площадь равностороннего треугольника: " << (pow(((y14 / 2) * 6) / sqrt(3), 2) * sqrt(3)) / 4 << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << "Сторона: " << sqrt(y14 * 4 / sqrt(3)) << "\n" << "Радиус вписанной окружности: " << ((sqrt(y14 * 4 / sqrt(3))) * sqrt(3)) / 6 << "\n" << "Радиус описанной окружности: " << (((sqrt(y14 * 4 / sqrt(3))) * sqrt(3)) / 6) * 2 << "\n" << "Площадь равностороннего треугольника: " << y14 << endl;
+		break;
+	}
+	}
+}
+void case15(int x15, int y15)
+{
+	switch (x15)
+	{
+	case 6:
+	{
+		cout << "Шестёрка ";
+		break;
+	}
+	case 7:
+	{
+		cout << "Семёрка ";
+		break;
+	}
+	case 8:
+	{
+		cout << "Восьмёрка ";
+		break;
+	}
+	case 9:
+	{
+		cout << "Девятка ";
+		break;
+	}
+	case 10:
+	{
+		cout << "Десятка ";
+		break;
+	}
+	case 11:
+	{
+		cout << "Валет ";
+		break;
+	}
+	case 12:
+	{
+		cout << "Дама ";
+		break;
+	}
+	case 13:
+	{
+		cout << "Король ";
+		break;
+	}
+	case 14:
+	{
+		cout << "туз ";
+		break;
+	}
+	}
+	switch (y15)
+	{
+	case 1:
+	{
+		cout << "пик " << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "треф " << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << "бубен " << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << "червей" << endl;
+		break;
+	}
+	}
+}
+void case16(int x16)
+{
+	if (x16 < 20 | x16>69)
+	{
+		cout << "Ошибка" << endl;
+		system("pause");
+	}
+	switch (x16 / 10)
+	{
+	case 2:
+	{
+		cout << "Двадцать";
+		break;
+	}
+	case 3:
+	{
+		cout << "Тридцать";
+		break;
+	}
+	case 4:
+	{
+		cout << "Сорок";
+		break;
+	}
+	case 5:
+	{
+		cout << "Пятьдесят";
+		break;
+	}
+	case 6:
+	{
+		cout << "Шестьдесят";
+		break;
+	}
+	}
+	switch (x16 % 10)
+	{
+	case 1:
+	{
+		cout << " один ";
+		break;
+	}
+	case 2:
+	{
+		cout << " два ";
+		break;
+	}
+	case 3:
+	{
+		cout << " три ";
+		break;
+	}
+	case 4:
+	{
+		cout << " четыре ";
+		break;
+	}
+	case 5:
+	{
+		cout << " пять ";
+		break;
+	}
+	case 6:
+	{
+		cout << " шесть ";
+		break;
+	}
+	case 7:
+	{
+		cout << " семь ";
+		break;
+	}
+	case 8:
+	{
+		cout << " восемь ";
+		break;
+	}
+	case 9:
+	{
+		cout << " девять ";
+		break;
+	}
+	}
+
+	switch (x16 % 10)
+	{
+	case 1:
+	{
+		cout << "год." << endl;
+		break;
+	}
+	case 0:
+	case 5:
+	case 6:
+	case 7:
+	case 8:
+	case 9:
+	{
+		cout << "лет." << endl;
+		break;
+	}
+	case 2:
+	case 3:
+	case 4:
+	{
+		cout << "года." << endl;
+		break;
+	}
+	}
+}
+void case17(int x17)
+{
+	if (x17 < 10 | x17>40)
+	{
+		cout << "Ошибка" << endl;
+		system("pause");
+	}
+	if (x17 / 10 == 1)
+	{
+		switch (x17)
+		{
+		case 10:
+		{
+			cout << "Десять учебных занятий." << endl;
+			break;
+		}
+		case 11:
+		{
+			cout << "Одинадцать учебных занятий." << endl;
+			break;
+		}
+		case 12:
+		{
+			cout << "Двенадцать учебных занятий." << endl;
+			break;
+		}
+		case 13:
+		{
+			cout << "Тринадцать учебных занятий." << endl;
+			break;
+		}
+		case 14:
+		{
+			cout << "Четырнадцать учебных занятий." << endl;
+			break;
+		}
+		case 15:
+		{
+			cout << "Пятнадцать учебных занятий." << endl;
+			break;
+		}
+		case 16:
+		{
+			cout << "Шестнадцать учебных занятий." << endl;
+			break;
+		}
+		case 17:
+		{
+			cout << "Семнадцать учебных занятий." << endl;
+			break;
+		}
+		case 18:
+		{
+			cout << "Восемнадцать учебных занятий." << endl;
+			break;
+		}
+		case 19:
+		{
+			cout << "Девятнадцать учебных занятий." << endl;
+			break;
+		}
+		}
+	}
+	else
+	{
+		switch (x17 / 10)
+		{
+		case 2:
+		{
+			cout << "Двадцать ";
+			break;
+		}
+		case 3:
+		{
+			cout << "Тридцать ";
+			break;
+		}
+		case 4:
+		{
+			cout << "Сорок ";
+			break;
+		}
+		}
+	}
+	switch (x17 % 10)
+	{
+	case 1:
+	{
+		cout << "одно ";
+		break;
+	}
+	case 2:
+	{
+		cout << "два ";
+		break;
+	}
+	case 3:
+	{
+		cout << "три ";
+		break;
+	}
+	case 4:
+	{
+		cout << "четыре ";
+		break;
+	}
+	case 5:
+	{
+		cout << "пять ";
+		break;
+	}
+	case 6:
+	{
+		cout << "шесть ";
+		break;
+	}
+	case 7:
+	{
+		cout << "семь ";
+		break;
+	}
+	case 8:
+	{
+		cout << "восемь ";
+		break;
+	}
+	case 9:
+	{
+		cout << "девять ";
+		break;
+	}
+	}
+	switch (x17 % 10)
+	{
+	case 1:
+	{
+		cout << "учебное задание." << endl;
+		break;
+	}
+	case 0:
+	case 5:
+	case 6:
+	case 7:
+	case 8:
+	case 9:
+	{
+		cout << "учебных заданий." << endl;
+		break;
+	}
+	case 2:
+	case 3:
+	case 4:
+	{
+		cout << "учебных задания." << endl;
+		break;
+	}
+	}
+}
+void case18(int x18)
+{
+	switch (x18 / 100)
+	{
+	case 1:
+	{
+		cout << "Сто ";
+		break;
+	}
+	case 2:
+	{
+		cout << "Двести ";
+		break;
+	}
+	case 3:
+	{
+		cout << "Триста ";
+		break;
+	}
+	case 4:
+	{
+		cout << "Четыреста ";
+		break;
+	}
+	case 5:
+	{
+		cout << "Пятьсот ";
+		break;
+	}
+	case 6:
+	{
+		cout << "Шестьсот ";
+		break;
+	}
+	case 7:
+	{
+		cout << "Семьсот ";
+		break;
+	}
+	case 8:
+	{
+		cout << "Восемьсот  ";
+		break;
+	}
+	case 9:
+	{
+		cout << "Девятьсот  ";
+		break;
+	}
+	}
+	if ((x18 % 100) / 10 == 1)
+	{
+		switch (x18 % 100)
+		{
+		case 10:
+		{
+			cout << "десять";
+			break;
+		}
+		case 11:
+		{
+			cout << "одинадцать";
+			break;
+		}
+		case 12:
+		{
+			cout << "двенадцать";
+			break;
+		}
+		case 13:
+		{
+			cout << "тринадцать";
+			break;
+		}
+		case 14:
+		{
+			cout << "четырнадцать";
+			break;
+		}
+		case 15:
+		{
+			cout << "пятнадцать";
+			break;
+		}
+		case 16:
+		{
+			cout << "шестнадцать";
+			break;
+		}
+		case 17:
+		{
+			cout << "семнадцать";
+			break;
+		}
+		case 18:
+		{
+			cout << "восемнадцать";
+			break;
+		}
+		case 19:
+		{
+			cout << "девятнадцать";
+			break;
+		}
+		}
+	}
+	else
+	{
+		switch ((x18 % 100) / 10)
+		{
+		case 2:
+		{
+			cout << "двадцать ";
+			break;
+		}
+		case 3:
+		{
+			cout << "тридцать ";
+			break;
+		}
+		case 4:
+		{
+			cout << "сорок ";
+			break;
+		}
+		case 5:
+		{
+			cout << "пятьдесят ";
+			break;
+		}
+		case 6:
+		{
+			cout << "шестьдесят ";
+			break;
+		}
+		case 7:
+		{
+			cout << "семьдесят ";
+			break;
+		}
+		case 8:
+		{
+			cout << "восемьдесят ";
+			break;
+		}
+		case 9:
+		{
+			cout << "девяносто ";
+			break;
+		}
+		}
+		switch (x18 % 10)
+		{
+		case 1:
+		{
+			cout << "один." << endl;
+			break;
+		}
+		case 2:
+		{
+			cout << "два." << endl;
+			break;
+		}
+		case 3:
+		{
+			cout << "три." << endl;
+			break;
+		}
+		case 4:
+		{
+			cout << "четыре." << endl;
+			break;
+		}
+		case 5:
+		{
+			cout << "пять." << endl;
+			break;
+		}
+		case 6:
+		{
+			cout << "шесть." << endl;
+			break;
+		}
+		case 7:
+		{
+			cout << "семь." << endl;
+			break;
+		}
+		case 8:
+		{
+			cout << "восемь." << endl;
+			break;
+		}
+		case 9:
+		{
+			cout << "девять." << endl;
+			break;
+		}
+		}
+	}
+}
+void case19(int N)
+{
+	int a = (N - 4) % 60;
+	cout << "Год ";
+	switch (a / 12)
+	{
+	case 0:
+	{
+		cout << "зеленой(ого) ";
+		break;
+	}
+	case 1:
+	{
+		cout << "красной(ого) ";
+		break;
+	}
+	case 2:
+	{
+		cout << "желтой(ого) ";
+		break;
+	}
+	case 3:
+	{
+		cout << "белой(ого) ";
+		break;
+	}
+	case 4:
+	{
+		cout << "черной(ого) ";
+		break;
+	}
+	}
+
+	switch (a % 12)
+	{
+	case 0:
+	{
+		cout << "крысы." << endl;
+		break;
+	}
+	case 1:
+	{
+		cout << "коровы." << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "тигра." << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << "зайца." << endl;
+		break;
+	}
+	case 4:
+	{
+		cout << "дракона." << endl;
+		break;
+	}
+	case 5:
+	{
+		cout << "змеи." << endl;
+		break;
+	}
+	case 6:
+	{
+		cout << "лошади." << endl;
+		break;
+	}
+	case 7:
+	{
+		cout << "овцы." << endl;
+		break;
+	}
+	case 8:
+	{
+		cout << "обезьяны." << endl;
+		break;
+	}
+	case 9:
+	{
+		cout << "курицы." << endl;
+		break;
+	}
+	case 10:
+	{
+		cout << "собаки." << endl;
+		break;
+	}
+	case 11:
+	{
+		cout << "свиньи." << endl;
+		break;
+	}
+	}
+}
+void case20(int M, int D)
+{
+	switch (M)
+	{
+	case 1:
+	{
+		if (D >= 20)
+		{
+			cout << "Водолей." << endl;
+		}
+		else
+		{
+			cout << "Козерог." << endl;
+		}
+		break;
+	}
+	case 2:
+	{
+		while (D > 29)
+		{
+			cout << "В Феврале максимум 29 дней, введите заново!" << endl;
+			break;
+		}
+		if (D <= 18)
+		{
+			cout << "Водолей." << endl;
+		}
+		else
+		{
+			cout << "Рыбы." << endl;
+		}
+		break;
+	}
+	case 3:
+	{
+		if (D <= 20)
+		{
+			cout << "Рыбы." << endl;
+		}
+		else
+		{
+			cout << "Овен." << endl;
+		}
+		break;
+	}
+	case 4:
+	{
+		if (D <= 19)
+		{
+			cout << "Овен." << endl;
+		}
+		else
+		{
+			cout << "Телец." << endl;
+		}
+		break;
+	}
+	case 5:
+	{
+		if (D <= 20)
+		{
+			cout << "Телец." << endl;
+		}
+		else
+		{
+			cout << "Близнецы." << endl;
+		}
+		break;
+	}
+	case 6:
+	{
+		if (D <= 21)
+		{
+			cout << "Близнецы." << endl;
+		}
+		else
+		{
+			cout << "Рак." << endl;
+		}
+		break;
+	}
+	case 7:
+	{
+		if (D <= 22)
+		{
+			cout << "Рак." << endl;
+		}
+		else
+		{
+			cout << "Лев." << endl;
+		}
+		break;
+	}
+	case 8:
+	{
+		if (D <= 22)
+		{
+			cout << "Лев." << endl;
+		}
+		else
+		{
+			cout << "Дева." << endl;
+		}
+		break;
+	}
+	case 9:
+	{
+		if (D <= 22)
+		{
+			cout << "Дева." << endl;
+		}
+		else
+		{
+			cout << "Весы." << endl;
+		}
+		break;
+	}
+	case 10:
+	{
+		if (D <= 22)
+		{
+			cout << "Весы." << endl;
+		}
+		else
+		{
+			cout << "Скорпион." << endl;
+		}
+		break;
+	}
+	case 11:
+	{
+		if (D <= 22)
+		{
+			cout << "Скорпион." << endl;
+		}
+		else
+		{
+			cout << "Стрелец." << endl;
+		}
+		break;
+	}
+	case 12:
+	{
+		if (D <= 21)
+		{
+			cout << "Стрелец." << endl;
+		}
+		else
+		{
+			cout << "Козерог." << endl;
+		}
+		break;
+	}
+	}
+}
+
+int main()
+{
+	SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);
+	double A;
+	cin >> A;
+	double B;
+	cin >> B;
+	Begin3(A,B);
+	system("pause");
+	return 0;
+}

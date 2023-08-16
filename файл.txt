@@ -1,0 +1,289 @@
+#include <fstream>
+#include <iostream>
+#include <windows.h>
+#include <ctype.h>
+
+using namespace std;
+
+struct clothes
+{
+    int model;
+    double cost;
+    bool sex;
+    char name[50];
+}h;
+
+int main()
+{
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
+    int p = -1;
+    while (p != 0)
+    {
+        cout << "Меню:\n0-Завершить работу программы.\n1-Записать абцаз текста в текстовый файл.\n2-Посимвольно считать из текстового файла  абзац и вывести его.\n3-Введите размер массива (int) и его значения, разделите их символом - ' .\n4-Считать из текстового файла элементы массива и вывести, разделяя пробелом.\n5-Введите содержимое полей вашей структуры. Сохранить с дозаписью.\n6-Прочитать все записаные структуры, разделяя их знаком - |.\n7-Введите содержимое полей структуры и сохранить это все в бинарный файл, используя режим дозаписи.\n8-Прочитать из бинарного файла все структуры и распечатать на консоль, разделяя символом - точка с запятой.\n9 - Введите предложение и запишите его в виде строки в текстовый файл.\n10 - Построчно считать предложения из текстового файла.\n11-Индивидуальное задание.\n";
+        cin >> p;
+        switch (p)
+        {
+        case 0:
+        {
+            cout << "Завершение работы программы.\n";
+            break;
+        }
+        case 1:
+        {
+            ofstream f("E:\\ParfianovichLab20.txt", ios::out | ios::trunc);
+            if (!(f))
+            {
+                cout << "Ошибка открытия(создания) файла\n";
+                system("pause");
+                return 0;
+            }
+            char v[1000];
+            cout << "Введите абзац текста для посимвольной записи в файл:\n";
+            cin.get();
+            cin.getline(v, 1000);
+            f << v << endl;
+            f.close();
+            cout << "Файл записан.\n";
+            break;
+        }
+        case 2:
+        {
+            char str[1000];
+            ifstream f2("E:\\ParfianovichLab20.txt", ios::in);
+            if (!f2)
+            {
+                cout << "Ошибка открытия(создания) файла\n";
+                system("pause");
+                return 0;
+            }
+            f2.getline(str, 1000, '\n');
+            while (!f2.eof())
+            {
+                cout << str << endl;
+                f2.getline(str, 1000, '\n');
+            }
+            f2.close();
+            cout << "Файл прочитан.\n";
+            break;
+        }
+        case 3:
+        {
+            ofstream f3("E:\\ParfianovichLab20_0.txt", ios::out | ios::app);
+            if (!f3)
+            {
+                cout << "Ошибка открытия(создания) файла\n";
+                system("pause");
+                return 0;
+            }
+            int n;
+            cout << "Введите размер массива: ";
+            cin >> n;
+            int* mas = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                cout << "mas[" << i << "] = ";
+                cin >> mas[i];
+                f3 << mas[i] << "'";
+            }
+            f3.close();
+            cout << "Файл записан." << endl;
+            break;
+        }
+        case 4:
+        {
+            ifstream f4("E:\\ParfianovichLab20_0.txt", ios::in);
+            if (!f4)
+            {
+                cout << "Ошибка открытия(создания) файла\n";
+                system("pause");
+                return 0;
+            }
+            int k;
+            f4 >> k;
+            while (!f4.eof())
+            {
+                cout << k << " ";
+                f4 >> k;
+            }
+            f4.close();
+            cout << "Файл прочитан." << endl;
+            break;
+        }
+        case 5:
+        {
+            ofstream f5("E:\\ParfianovichLab20_1.txt", ios::out | ios::app);
+            if (!f5)
+            {
+                cout << "Ошибка открытия(создания) файла\n";
+                system("pause");
+                return 0;
+            }
+            cout << "Введите наименование вещи: ";
+            cin.get();
+            cin.getline(h.name, 100);
+            f5 << h.name << endl;
+            cout << "Введите модель вещи: ";
+            cin >> h.model;
+            f5 << h.model << endl;
+            cout << "Введите стоимость вещи: ";
+            cin >> h.cost;
+            f5 << h.cost << endl;
+            cout << "Введите пол: ";
+            cin >> h.sex;
+            f5 << h.sex << endl;
+            f5.close();
+            cout << "Файл записан." << endl;
+            break;
+        }
+        case 6:
+        {
+            char str[1000];
+            ifstream f6("E:\\ParfianovichLab20_1.txt", ios::in);
+            if (!f6)
+            {
+                cout << "ErrorRead5";
+                system("pause");
+                return 0;
+            }
+            f6.getline(str, 1000, '\n');
+            while (!f6.eof())
+            {
+                cout << str << endl;
+                f6.getline(str, 1000, '\n');
+            }
+            f6.close();
+            cout << "Файл прочитан." << endl;
+            break;
+        }
+        case 7:
+        {
+            fstream f7("E:\\ParfianovichLab20_2.bin", ios::app | ios::binary);
+            if (!f7)
+            {
+                cout << "Ошибка открытия(создания) файла\n";
+                system("pause");
+                return 0;
+            }
+            clothes c;
+            cout << "Введите наименование вещи: ";
+            cin.get();
+            cin.getline(c.name, 100);
+            cout << "Введите модель вещи: ";
+            cin >> c.model;
+            cout << "Введите стоимость вещи: ";
+            cin >> c.cost;
+            cout << "ВВедитое пол: ";
+            cin >> c.sex;
+            f7.write((char*)&c, sizeof(c));
+            f7.close();
+            cout << "Файл записан." << endl;
+            break;
+        }
+        case 8:
+        {
+            ifstream f8("E:\\ParfianovichLab20_2.bin", ios::in | ios::binary);
+            clothes c1;
+            if (!f8)
+            {
+                cout << "Ошибка открытия(создания) файла\n";
+                system("pause");
+                return 0;
+            }
+            do
+            {
+                f8.read((char*)&c1, sizeof(c1));
+                if (!f8.eof())
+                {
+                    break;
+                }
+                cout << c1.model << " | " << c1.name << " | " << c1.cost << " | " << c1.cost << " | ";
+            } while (f8.eof());
+            f8.close();
+            cout << "Файл прочитан." << endl;
+            break;
+        }
+        case 9:
+        {
+            ofstream f9("ParfianovichLab20_3.txt", ios::out | ios::app);
+            if (!f9)
+            {
+                cout << "Ошибка открытия(создания) файла\n";
+                system("pause");
+                return 0;
+            }
+            char text[100];
+            cout << "Введите абзац: ";
+            cin.get();
+            cin.getline(text, 100);
+            f9 << text << endl;
+            f9.close();
+            cout << " Файл записан.";
+            break;
+        }
+        case 10:
+        {
+            char str[100];
+            ifstream f2("ParfianovichLab20_3.txt", ios::in);
+            if (!f2)
+            {
+                cout << "Ошибка открытия(создания) файла\n";
+                system("pause");
+                return 0;
+            }
+            f2.getline(str, 100, '\n');
+            while (!f2.eof())
+            {
+                cout << str << endl;
+                f2.getline(str, 100, '\n');
+            }
+            cout << "Файл прочитан." << endl;
+            f2.close();
+            break;
+        }
+        case 11:
+        {
+            ofstream file("D:\\Parf.txt", ios::out | ios::trunc);
+            if (!file)
+            {
+                cout << "ErrorWrite11";
+                system("pause");
+                return 0;
+            }
+            ifstream file1("D:\\Parf.txt", ios::in);
+            if (!file1)
+            {
+                cout << "ErrorWrite11";
+                system("pause");
+                return 0;
+            }
+            ofstream file2("D:\\Parf2.txt", ios::out | ios::trunc);
+            if (!file2)
+            {
+                cout << "ErrorWrite11";
+                system("pause");
+                return 0;
+            }
+            char c[1000];
+            cin.ignore();
+            cin.getline(c, 100);
+            file << c << endl;
+            char d;
+            while (!(file1.eof()))
+            {   
+                file1 >> d;
+                file2 << (char)tolower(d);
+            }
+            file.close();
+            file1.close();
+            file2.close();
+            cout << "Файл записан." << endl;
+            break;
+
+        }
+        }
+        system("pause");
+        return 0;
+
+    }
+}

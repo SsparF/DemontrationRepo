@@ -1,0 +1,141 @@
+#include <iostream>
+#include <time.h>
+#include <cmath>
+#include <Windows.h>
+using namespace std;
+
+
+int main()
+{
+	SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);
+	srand(time(NULL));
+	int m, n;
+	do
+	{
+		cout << "Введите кол-во строк ";
+		cin >> m;
+		cout << '\n';
+	} while (m < 1);
+	do
+	{
+		cout << "Введите кол-во столбцов ";
+		cin >> n;
+		cout << '\n';
+	} while (n < 1);
+	signed long int** mas1 = new signed long int* [m];
+	if (mas1 == NULL)
+	{
+		cout << "Не удалось создать массив";
+		system("pause");
+		return 0;
+	}
+	for (int i = 0; i < m; i++)
+	{
+		mas1[i] = new signed long[n];
+		if (mas1[i] == NULL)
+		{
+			cout << "Введите корректно" << endl;
+			--i;
+		}
+	}
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << "Введите [" << i << "][" << j << "] элемент массива: ";
+			cin >> mas1[i][j];
+			cout << '\n';
+		}
+	}
+	cout << "Print array:" << endl;
+	for (int i = 0; i < m; i++)
+	{
+
+		for (int j = 0; j < n; j++)
+		{
+			cout << mas1[i][j] << " | ";
+		}
+		cout << '\n';
+	}
+	int sum = 0;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (i == j)
+			{
+				sum += pow(mas1[i][j], 2);
+			}
+
+		}
+	}
+	int prz = 1;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if ((i != j) && (!(j % 2 == 0)))
+			{
+				prz *= mas1[i][j];
+			}
+
+		}
+	}
+	int min1 = 0;
+	int k = 1;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (k > 0)
+			{
+				cout << "Первый минимальный: " << mas1[i][j];
+				break;
+				{
+					if (min1 = mas1[i][j])
+					{
+						k++;
+					}
+					if (mas1[i][j] < min1)
+					{
+						mas1[i][j] = min1;
+					}
+				}
+			}
+		}
+	}
+	int sum1 = 0;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			sum1 += mas1[i][j];
+		}
+	}
+	int srn = sum / (m * n);
+	int k1 = 0;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if ((mas1[i][j] > srn) && (mas1[i][j] < sum1))
+			{
+				k1 += 1;
+			}
+		}
+	}
+	cout << "Сумма квадратов значений главной диагонали: " << sum << endl;
+	cout << "Минимальное значение: "<<min1 << endl;
+	cout << "Произведение всех элементов, не входящих в главную диагональ и не относящихся к 	четным столбцам: " << prz << endl;
+	cout << "Kоличество элементов массива, значение каждого из которых больше среднего арифметического значения всех элементов массива и меньше суммы всех элементов массива : "<<k1<<endl;
+	for (int i = 0; i < m; i++)
+	{
+	delete[] mas1[i];
+	}
+	delete[] mas1;
+	system("pause");
+	return 0;
+}
+
+

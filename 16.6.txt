@@ -1,0 +1,98 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <string>
+#include<windows.h>
+using namespace std;
+
+struct ORDER
+{
+    int plt[10];
+    int pol[10];
+    doble sum;
+};
+
+void insertSort(char* n, int m)
+{
+    for (int i = 0; i < n; i++)
+    {
+        char t = n[i];
+        for (int j = i - 1; j > -1 && t < n[j]; j--)
+        {
+            n[j + 1] = n[j];
+            n[j] = t;
+        }
+    }
+}
+
+
+
+//по возрастанию
+void sortAndPrint(ORDER tranza[])
+{
+    // сортировка пузырьком
+    ORDER tmp;
+
+    for (int i = N - 1; i >= 0; i--)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if (getMarksSr(tranza[j]) > getMarksSr(tranza[j + 1]))
+            {
+                tmp = students[j];
+                students[j] = students[j + 1];
+                students[j + 1] = tmp;
+            }
+        }
+    }
+    for (int i = 0; i < N; i++)
+    {
+        printf("%s %d %d %d Srednee = %d\n", students[i].fio, students[i].marks[0], students[i].marks[1], students[i].marks[2], getMarksSr(students[i]));
+    }
+}
+
+
+
+
+int main() 
+{
+    SetConsoleOutputCP (1251);
+    SetConsoleCP (1251);
+    cout << "Введите количество транзакций: " << endl;
+    int m;
+    cin >> m;
+    ORDER* tranz = new ORDER[m];
+    for (int i = 0; i != m; i++) 
+    {
+        cout << "Введите расчётный счёт плательщика: " << endl;
+	for(int j=0; j<10; j++)
+	{
+        	cin >> tranz[j].plt;
+	}
+        cout << "Введите расчётный счёт получателя: " << endl;
+	for(int j=0; j<10; j++)
+	{
+        	cin >> tranz[i].pol;
+	}
+        cout << "Введите сумму в бел. руб.: " << endl;
+        cin >> tranz[i].sum;
+        cout << endl;
+    }
+    cout << endl;
+    for (int i = 0; i < m; i++) 
+    {
+	for(int j=0; j<10; j++)
+	{
+        	cout << tranz[i].plt << endl;
+	}
+	for(int j=0; j<10; j++)
+	{
+        	cout << tranz[i].pol << endl;
+	}
+        cout << stud[i].marks[j] << " ";
+        cout << endl;
+
+    }
+    cout << endl;
+    delete[]tranz;
+    system("pause");
+    return 0;

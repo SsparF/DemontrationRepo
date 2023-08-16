@@ -1,0 +1,8 @@
+D:\Учеба\projects_c++\laba29_2\laba29_2\Debug\laba29_2.vcxprojAssemblyReference.cache
+D:\Учеба\projects_c++\laba29_2\laba29_2\Debug\laba292.MyForm.resources
+D:\Учеба\projects_c++\laba29_2\laba29_2\Debug\laba29_2.vcxproj.GenerateResource.cache
+D:\Учеба\projects_c++\laba29_2\laba29_2\Debug\laba29_2.vcxproj.ResolveComReference.cache
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\Debug\laba29_2.vcxprojAssemblyReference.cache
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\Debug\laba29_2.vcxproj.ResolveComReference.cache
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\Debug\laba292.MyForm.resources
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\Debug\laba29_2.vcxproj.GenerateResource.cache

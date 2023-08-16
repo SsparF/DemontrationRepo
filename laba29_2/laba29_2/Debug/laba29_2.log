@@ -1,0 +1,16 @@
+﻿  MyForm.cpp
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(260): warning C4309: инициализация: усечение константного значения
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(260): message : Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Selection " из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(263): warning C4309: инициализация: усечение константного значения
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(263): message : Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::_Document " из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(263): message : Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Document " из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(264,25): warning C4018: <: несоответствие типов со знаком и без знака
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(272): warning C4309: инициализация: усечение константного значения
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(272): message : Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Range " из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(305,25): warning C4018: <: несоответствие типов со знаком и без знака
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(310,31): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+E:\ОАиП\Лабы ОАиП\laba29_2\laba29_2\MyForm.h(318,35): warning C4101: e: неиспользованная локальная переменная
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Создание кода...
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  laba29_2.vcxproj -> E:\ОАиП\Лабы ОАиП\laba29_2\Debug\laba29_2.exe

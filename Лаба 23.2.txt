@@ -1,0 +1,259 @@
+#include <iostream>
+#include <windows.h>
+
+using namespace std;
+
+class Worker
+{
+public:
+	Worker()
+	{
+
+	}
+	Worker(string x0, int y0, double z0)
+	{
+		name = x0;
+		age = y0;
+		zarp = z0;
+	}
+	virtual double zarplata()
+	{
+		return zarp;
+	}
+	virtual void Show()
+	{
+		cout << name << "\t" << age << "\t" << zarp << endl;
+	}
+protected:
+	string name;
+	int age;
+	double zarp;
+};
+
+class WorkerChas:public Worker
+{
+public:
+	WorkerChas()
+	{
+
+	}
+	WorkerChas(string x1, int y1, double z1, int r1) :Worker(x1, y1, z1)
+	{
+		chas = r1;
+	}
+	double zarplata() override
+	{
+		Worker::zarplata();
+		ChasZarp = zarp * chas;
+		return ChasZarp;
+	}
+	void Show() override
+	{
+		Worker::Show();
+		cout << "Почасовая зарплата: " <<ChasZarp<<endl;
+	}
+protected:
+	int chas;
+	double ChasZarp;
+};
+
+class WorkerPrem :public Worker
+{
+public:
+	WorkerPrem()
+	{
+
+	}
+	WorkerPrem(string x2, int y2, double z2, int r2) :Worker(x2, y2, z2)
+	{
+		premia = r2;
+	}
+	double zarplata() override
+	{
+		Worker::zarplata();
+		PremiaZarp = zarp + premia;
+		return PremiaZarp;
+	}
+	void Show() override
+	{
+		Worker::Show();
+		cout << "Премиальная зарплата: " << PremiaZarp << endl;
+	}
+protected:
+	int premia;
+	double PremiaZarp;
+};
+
+class WorkerProc :public Worker
+{
+public:
+	WorkerProc()
+	{
+
+	}
+	WorkerProc(string x3, int y3, double z3, int r3) :Worker(x3, y3, z3)
+	{
+		proc = r3;
+	}
+	double zarplata() override
+	{
+		Worker::zarplata();
+		ProcZarp = zarp*(proc/100.0);
+		return ProcZarp;
+	}
+	void Show() override
+	{
+		Worker::Show();
+		cout << "Процентная зарплата: " << ProcZarp << endl;
+	}
+protected:
+	int proc;
+	double ProcZarp;
+};
+
+int main()
+{
+	SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);
+
+	Worker gik("Ivan", 23, 40.5);
+	Worker* gik1 = new Worker("Sergey", 20, 30);
+	gik.zarplata();
+	gik.Show();
+	cout << "\n";
+	gik1->zarplata();
+	gik1->Show();
+	cout << "\n";
+
+	WorkerChas gik2("Nikita", 26, 41, 5);
+	WorkerChas* gik3 = new WorkerChas("Vova", 24, 50.8, 10);
+	gik2.zarplata();
+	gik2.Show();
+	cout << "\n";
+	gik3->zarplata();
+	gik3->Show();
+	cout << "\n";
+
+	WorkerPrem gik4("Nikola", 21, 49, 34.6);
+	WorkerPrem* gik5 = new WorkerPrem("Viola", 29, 55, 15.5);
+	gik4.zarplata();
+	gik4.Show();
+	cout << "\n";
+	gik5->zarplata();
+	gik5->Show();
+	cout << "\n";
+
+	WorkerProc gik6("Nurmin", 33, 70, 65);
+	WorkerProc* gik7 = new WorkerProc("Matvey", 17, 30.8, 50);
+	gik6.zarplata();
+	gik6.Show();
+	cout << "\n";
+	gik7->zarplata();
+	gik7->Show();
+	cout << "\n";
+
+	string h;
+	double x;
+	int n,a;
+	cin >> n;
+	cout << "\n";
+	Worker* masW = new Worker[n];
+	for (int i = 0; i < n; i++)
+	{
+		cout << "\nВведите имя: ";
+		cin >> h;
+		cout << "\nВведите возраст: ";
+		cin >> a;
+		cout << "\nВведите зарплату: ";
+		cin >> x;
+		masW[i] = Worker(h, a, x);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		masW[i].Show();
+		masW[i].zarplata();
+		cout << "\n";
+	}
+	delete[]masW;
+
+	string h1;
+	double x1;
+	int n1, a1,b1;
+	cin >> n1;
+	cout << "\n";
+	WorkerChas* masWC = new WorkerChas[n1];
+	for (int i = 0; i < n1; i++)
+	{
+		cout << "\nВведите имя: ";
+		cin >> h1;
+		cout << "\nВведите возраст: ";
+		cin >> a1;
+		cout << "\nВведите зарплату: ";
+		cin >> x1;
+		cout << "\nВведите кол-во часов: ";
+		cin >> b1;
+		masWC[i] = WorkerChas(h1, a1, x1, b1);
+	}
+	for (int i = 0; i < n1; i++)
+	{
+		masWC[i].Show();
+		masWC[i].zarplata();
+		cout << "\n";
+	}
+	delete[]masWC;
+
+	string h2;
+	double x2, b2;
+	int n2, a2;
+	cin >> n2;
+	cout << "\n";
+	WorkerPrem* masWP = new WorkerPrem[n2];
+	for (int i = 0; i < n2; i++)
+	{
+		cout << "\nВведите имя: ";
+		cin >> h2;
+		cout << "\nВведите возраст: ";
+		cin >> a2;
+		cout << "\nВведите зарплату: ";
+		cin >> x2;
+		cout << "\nВведите премию: ";
+		cin >> b2;
+		masWP[i] = WorkerPrem(h2, a2, x2, b2);
+	}
+	for (int i = 0; i < n2; i++)
+	{
+		masWP[i].Show();
+		masWP[i].zarplata();
+		cout << "\n";
+	}
+	delete[]masWP;
+
+	string h3;
+	double x3;
+	int n3, a3, b3;
+	cin >> n3;
+	cout << "\n";
+	WorkerProc* masWPr = new WorkerProc[n3];
+	for (int i = 0; i < n3; i++)
+	{
+		cout << "\nВведите имя: ";
+		cin >> h3;
+		cout << "\nВведите возраст: ";
+		cin >> a3;
+		cout << "\nВведите зарплату: ";
+		cin >> x3;
+		cout << "\nВведите процент от зарплаты: ";
+		cin >> b3;
+		masWPr[i] = WorkerProc(h3, a3, x3, b3);
+	}
+	for (int i = 0; i < n3; i++)
+	{
+		masWPr[i].Show();
+		masWPr[i].zarplata();
+		cout << "\n";
+	}
+	delete[]masWPr;
+
+	system("pause");
+	return 0;
+}

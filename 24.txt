@@ -1,0 +1,142 @@
+#include <iostream>
+using namespace std;
+
+class Point
+{
+public:
+	Point()
+	{
+
+	}
+	Point(double a, double b)
+	{
+		x = a;
+		y = b;
+	}
+	virtual double SquareCircle() = 0;
+	virtual double Lenght() = 0;
+	virtual void Show() = 0;
+	virtual double SquareCylinder() = 0;
+
+protected:
+	double x, y;
+};
+
+class Circle : virtual public Point
+{
+public:
+	Circle()
+	{
+
+	}
+	Circle(double a0, double b0, double rad) : Point(a0, b0)
+	{
+		r = rad;
+	}
+	double SquareCircle() override
+	{
+		return s = pow((3, 14 * r), 2);
+	}
+	double Lenght() override
+	{
+		return p = 2.0 * 3.14 * r;
+	}
+	double SquareCylinder() override
+	{
+		return 0;
+	}
+	void Show() override
+	{
+		cout << "Площадь круга = " << s << endl;
+		cout << "Периметр круга = " << p << endl;
+	}
+protected:
+	double r, p, s, l;
+};
+
+class Cylinder :public Circle
+{
+public:
+	Cylinder()
+	{
+
+	}
+	Cylinder(double a1, double b1, double rad0, int width) :Circle(a1, b1, rad0)
+	{
+		h = width;
+	}
+	double SquareCircle() override
+	{
+		return s = pow((3, 14 * r), 2);
+	}
+	double Lenght() override
+	{
+		return p = (2.0 * 3.14 * r)*2;
+	}
+	double SquareCylinder() override 
+	{
+		return s1 = 2*p*r*(h+r);
+	}
+	void Show() override
+	{
+		cout << "Площадь круга = " << s << endl;
+		cout << "Периметр цилиндра = " << p << endl;
+		cout << "Площадь полной поверхности цилиндра = " << s1 << endl;
+	}
+protected:
+	int h;
+	double s1;
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int n,g,w;
+	cin >> n;
+	double a, b, c, s1 = 0;
+	Point** mas = new Point * [n];
+	for (int i = 0; i < n; i++)
+	{
+		cout << "0-Окружность.\n1-Цилиндр.\nКого создать?" << endl;
+		cin >> g;
+		switch (g)
+		{
+		case 0:
+		{
+			cout << "Введите координаты точки\n";
+			cin >> a >> b;
+			cout << "Введите радиус окружности\n";
+			cin >> c;
+			mas[i] = new Circle(a, b, c);
+			mas[i]->SquareCircle();
+			mas[i]->Lenght();
+			break;
+		}
+		case 1:
+		{
+			cout << "Введите координаты точки\n";
+			cin >> a >> b;
+			cout << "Введите радиус окружности\n";
+			cin >> c;
+			cout << "Введите высоту цилиндра\n";
+			cin >> w;
+			mas[i] = new Cylinder(a, b, c, w);
+			mas[i]->SquareCircle();
+			mas[i]->Lenght();
+			mas[i]->SquareCylinder();
+			break;
+		}
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << "[" << i << "]\n";
+		mas[i]->Show();
+	}
+	for (int i = 0; i < n; i++)
+	{
+		s1 += mas[i]->SquareCylinder();
+	}
+
+	cout << "Сумма полных площадей цилиндров = " << s1 << endl;
+}

@@ -1,0 +1,202 @@
+#include <fstream>
+#include <iostream>
+#include <windows.h>
+#include <ctype.h>
+#include <string.h>
+
+using namespace std;
+
+class Materik
+{
+private:
+    int davlenie;
+    double area;
+    string name;
+    bool sea;
+public:
+    Materik()
+    {
+        cout << "Обьект создан." << endl;
+    }
+    Materik(int a, double b, string c, bool d)
+    {
+        davlenie = a;
+        area = b;
+        name = c;
+        sea = d;
+    }
+    int setDavlenie(int x)
+    {
+        davlenie = x;
+        return davlenie;
+    }
+    int getDavlenie()
+    {
+        return davlenie;
+    }
+
+    double setarea(double x1)
+    {
+        area = x1;
+        return area;
+    }
+    double getarea()
+    {
+        return area;
+    }
+
+    string setname(string x)
+    {
+        name = x;
+        return name;
+    }
+    string getname()
+    {
+        return name;
+    }
+
+    bool setsea(bool x)
+    {
+        sea = x;
+        return sea;
+    }
+    bool getsea()
+    {
+        return sea;
+    }
+    void print()
+    {
+        cout << getDavlenie() <<" мм.рт.ст.\n"<< getarea()<<" км. квадр.\n"<< getname() <<"\n"<< getsea()<<"(1-есть выход к морю, 0-нет выхода к морю)"<< endl;
+    }
+    void plotnost(double area, int mas[5])
+    {
+        int sum = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            sum = sum + mas[i];
+        }
+        //int plt = area / sum;
+        if (sum == 0)
+        {
+            cout << "Деление на 0 !" << endl;
+        }
+        else
+        {
+            cout << "Плотность: "<< sum/area <<endl;
+        }
+    }
+    ~Materik()
+    {
+        cout << "Обьект удален." << endl;
+    }
+
+};
+int main()
+{
+    int mas[5] = { 23400,34500,340000,12000,987000 };
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
+    Materik gik;
+    Materik* p = &gik;
+    Materik& r = gik;
+    gik.setDavlenie(766);
+    gik.setarea(345.7);
+    gik.setname("Параша");
+    gik.setsea(1);
+    gik.print();
+    gik.plotnost(300,mas);
+    p->print();
+    gik.plotnost(300, mas);
+    (&r)->print();
+    gik.plotnost(300, mas);
+    gik.~Materik();
+
+
+    int davlenie;
+    double area;
+    string name;
+    bool sea;
+
+    cout << "Введите давление:";
+    cin >> davlenie;
+
+    cout << "Введите площадь:";
+    cin >> area;
+
+    cout << "Введите название:";
+    cin >> name;
+
+    cout << "Есть ли выход к морю? ";
+    cin >> sea;
+
+    Materik gik2(davlenie, area, name, sea);
+    gik2.~Materik();
+
+
+    Materik* gik3 = new Materik;
+    Materik** p2 = &gik3;
+    Materik& r2 = *gik3;
+
+    int x1;
+    double x2;
+    string x3;
+    bool x4;
+
+    cout << "Введите давление:";
+    cin >> x1;
+    gik3->setDavlenie(x1);
+
+    cout << "Введите площадь:";
+    cin >> x2;
+    gik3->setarea(x2);
+
+    cout << "Введите название:";
+    cin >> x3;
+    gik3->setname(x3);
+
+    cout << "Есть ли выход к морю? ";
+    cin >> x4;
+    gik3->setsea(x4);
+
+    gik3->print();
+    gik.plotnost(300, mas);
+    (*p2)->print();
+    gik.plotnost(300, mas);
+    (&r2)->print();
+    gik.plotnost(300, mas);
+    gik3->~Materik();
+
+    int y1;
+    double y2;
+    string y3;
+    bool y4;
+
+    cout << "Введите давление:";
+    cin >> y1;
+
+    cout << "Введите площадь:";
+    cin >> y2;
+
+    cout << "Введите название:";
+    cin >> y3;
+
+    cout << "Есть ли выход к морю? ";
+    cin >> y4;
+
+    Materik* gik4 = new Materik(y1, y2, y3, y4);
+
+    Materik** p3 = &gik4;
+    Materik& r3 = *gik4;
+
+
+    gik4->print();
+    gik.plotnost(300, mas);
+    (*p3)->print();
+    gik.plotnost(300, mas);
+    (&r3)->print();
+    gik.plotnost(300, mas);
+
+
+    system("pause");
+    return 0;
+}

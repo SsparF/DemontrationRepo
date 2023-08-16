@@ -1,0 +1,176 @@
+#include<iostream>
+#include<Windows.h>
+
+using namespace std;
+
+bool event(int);
+bool event1(int);
+bool event2(int);
+bool event3(int);
+bool event4(int);
+float mul10(float);
+bool EventAndPositive(int);
+bool EventOrPositive(int);
+bool EventOrPositive1(int);
+void fizbus(int);
+void fizbus1(int);
+void characteristic(int);
+double myFabs(double);
+int mymin(int, int);
+int mymin1(int, int, int, int);//Прототип фунции
+
+int main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+m:
+	int x;
+	int z;
+	int h;
+	int f;
+	int w;
+	cout << "Введите:";
+	cin >> z;
+	cout << "Введите:";
+	cin >> h;
+	cout << "Введите:";
+	cin >> f;
+	cout << "Введите:";
+	cin >> w;
+	x=mymin1(z,h,f,w);
+	cout << x << endl;
+	goto m;
+	system("pause");
+	return 0;
+}
+
+bool event(int a)
+{
+
+	if (a % 2 == 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+bool event1(int a)
+{
+	if (a % 2 == 0)
+	{
+		return true;
+	}
+	return false;
+}
+bool event2(int a)
+{
+	bool x = (a % 2 == 0);
+	return x;
+}
+bool event3(int a)
+{
+	return(a % 2 == 0);
+}
+bool event4(int a)
+{
+	return (a % 2);
+}
+float mul10(float b)
+{
+	return b * 10;
+}
+bool EventAndPositive(int c)
+{
+	return (c > 0 & c % 2 == 0);
+}
+bool EventOrPositive(int c)
+{
+	return (c > 0 | c % 2 == 0);
+}
+bool EventOrPositive1(int c)
+{
+	return (c % 2 == 0 & c <= 0) | (c % 2 != 0 & c > 0);
+}
+void fizbus(int a)
+{
+	if (a > 0 & a % 2 == 0)
+	{
+		cout << "fizbus\n";
+	}
+	else
+	{
+		if (a > 0)
+		{
+			cout << "bus\n";
+		}
+		if  (a % 2 == 0)
+		{
+			cout << "fiz\n";
+		}
+		else
+		{
+			cout << "Условия не соблюдаются\n";
+		}
+		
+	}		
+}
+void fizbus1(int a)
+{
+	if (a % 2 == 0)
+	{
+		cout << "fiz";
+	}
+	if (a > 0)
+	{
+		cout << "bus";
+	}
+	cout << endl;
+}
+void characteristic(int a)
+{
+	if (a < 0 & a % 2 == 0)
+	{
+		cout << "Отрицтельное, четное число\n";
+	}
+	if (a<0 & a % 2 != 0)
+	{
+		cout << "Отрицательное, нечетное число\n";
+	}
+	if (a > 0 & a % 2 == 0)
+	{
+		cout << "Положительное, четное число\n";
+	}
+	if (a > 0 & a % 2 != 0)
+	{
+		cout << "Положительное, нечётное число\n";
+	}
+	if (a == 0)
+	{
+		cout << "Равно нулю,четное \n";
+	}
+
+}
+double myFabs(double a)
+{
+	if (a < 0)
+	{
+		a=-a;
+		return a;
+	}
+	else
+	{
+		return a;
+	}
+}
+int mymin(int a, int b)
+{
+	return a < b ? a : b;
+}
+int mymin1(int a, int b, int c, int d)
+{
+	return (a < b& a < c& a < d ? a : b < a & b < c& b < d ? b : c < a & c < b ? c : d < a& d < b& d < c ? d : a);
+}
+
+

@@ -1,0 +1,149 @@
+#include <iostream>
+using namespace std;
+
+class Rave
+{
+private:
+	int count = 0;
+public:
+	Rave()
+	{
+
+	}
+	Rave(int a )
+	{
+		count = a;
+	}
+	Rave(const Rave& obj)
+	{
+		this->count = obj.count;
+		cout << "Копирование успешно прошло\n";
+	}
+	int GetRave()
+	{
+		return count;
+	}
+	Rave operator++()
+	{
+		cout << "++Rave\n";
+		count++;
+		return *this;
+	}
+	Rave operator++(int)
+	{
+		cout << "Rave++\n";
+		count++;
+		return *this;
+	}
+	Rave operator--()
+	{
+		cout << "--Rave\n";
+		count--;
+		return (*this);
+	}
+	Rave operator--(int)
+	{
+		cout << "Rave++\n";
+		count--;
+		return (*this);
+	}
+	Rave operator+(Rave object)
+	{
+		cout << "Summ+\n";
+		this->count = this->count + object.count;
+		return (*this);
+	}
+	Rave operator-(Rave object)
+	{
+		cout << "Raznost`-\n";
+		this->count = this->count - object.count;
+		return (*this);
+	}
+	Rave operator*(Rave object)
+	{
+		cout << "Умножение*\n";
+		this->count = this->count * object.count;
+		return (*this);
+	}
+	bool operator<(Rave ob)const
+	{
+		return ((this->count < ob.count) ? true : false);
+	}
+};
+class Stringg
+{
+public:
+	Stringg()
+	{
+
+	}
+	Stringg(char c[])
+	{
+		setA(c);
+	}
+	Stringg(const Stringg& obj)
+	{
+		*this->A = *obj.A;
+		cout << "Копирование успешно прошло\n";
+	}
+	char* getA()
+	{
+		return A;
+	}
+	char* setA(char x[])
+	{
+		if (strlen(x) > 0)
+		{
+			strcpy_s(A, strlen(x) + 1, x);
+		}
+		return A;
+	}
+
+protected:
+	char A[];
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	//Counter c1, c2;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << endl;
+	//c1++;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << endl;
+	//++c1;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << endl;
+	//c2 = c2++;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << endl;
+	//Counter c3 = ++c2;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << ' ' << c3.GetCount() << endl;
+	//c1--;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << ' ' << c3.GetCount() << endl;
+	//c2--;
+	//c3--;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << ' ' << c3.GetCount() << endl;
+	//c1 + c2;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << ' ' << c3.GetCount() << endl;
+	//c1 - c2;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << ' ' << c3.GetCount() << endl;
+	//c1 * c2;
+	//cout << c1.GetCount() << ' ' << c2.GetCount() << ' ' << c3.GetCount() << endl;
+
+
+	char i[] = "ggg";
+	char j[] = "cats";
+	Stringg a(i);
+	Stringg b(j);
+	if (strlen(a.getA()) > strlen(b.getA()))
+	{
+		cout << "Строка а > строки б\n";
+	}
+	else if (strlen(a.getA()) < strlen(b.getA()))
+	{
+		cout << "Строка а < строки б\n";
+
+	}
+	else
+	{
+		cout << "Строки а и б равны\n";
+	}
+}

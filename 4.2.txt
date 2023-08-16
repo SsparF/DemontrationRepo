@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	long long int n = 0, k=0;
+	long double x, a, b, h;
+	cout << "Введите а: ";
+	cin >> a;
+	cout << "Введите b:";
+	cin >> b;
+	if (a > b)
+	{
+		long double t = a;
+		a = b;
+		b = t;
+		cout << "Значения а и в обменены. \n";
+	}
+	cout << "Введите кол-во шагов между а и в (n <=20, так как n влияет на расчёт факториала): ";
+	cin >> n;
+	if (n < 0)
+	{
+		n = -n;
+		cout << "Колличество шагов должно быть неотрицательным. n:" << n << endl;
+
+	}
+	h = (b - a) / n;
+	long double s0 = 0, S = 0, Y = 0, raz = 0;
+	cout << "|\tx\t|\tS(X)\t|Y(x)\t|\t|\t|S(x)-Y(x)|\t|\n";
+	for (x = a; x <= b; x += b)
+	{
+		for (int i = 1; i < n + 1; i += 2)
+		{
+			unsigned long long int f = 1;
+			for (int j = 1; j < 1 + 1; j++)
+			{
+				f = f * j;
+			}
+			s0 = (pow(-1, k) * ((pow(x, 2 * k)) / f));
+			S = S + s0;
+			k++;
+		}
+		Y = cos(x);
+		raz = fabs(S - Y);
+		cout << '\t' << x << '\t' << '|' << '\t' << S << '\t' << '|' << '\t' << Y << '\t' << '|' << '\t' << raz << '\t' << '|' << endl;
+
+	}
+	system("pause");
+	return 0;
+}
